@@ -1,0 +1,9 @@
+bin/
+obj/
+*.user
+.vs/
+.idea/
+appsettings.Development.json
+*.db
+wwwroot/uploads/*
+!wwwroot/uploads/.gitkeep
