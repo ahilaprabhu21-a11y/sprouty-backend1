@@ -9,8 +9,11 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // ---- Services ----
-builder.Services.AddDbContext<AppDbContext>(opts =>
-    opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddDbContext<AppDbContext>(opts =>
+   // opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IFileStorageService, FileStorageService>();
