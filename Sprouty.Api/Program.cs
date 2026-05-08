@@ -21,7 +21,7 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddCors(o =>
     o.AddDefaultPolicy(p => p
-        .WithOrigins("http://localhost:5173", "http://localhost:5174")
+        .WithOrigins("http://localhost:5173", "http://localhost:5174", "https://sprouty-frontend1.onrender.com")
         .AllowAnyHeader()
         .AllowAnyMethod()));
 
